@@ -8,6 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "biopython",
+        "dm-tree",
         "numpy",
         "pandas",
         "pytorch-lightning",

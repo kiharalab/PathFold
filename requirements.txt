@@ -1,4 +1,5 @@
 biopython
+dm-tree
 numpy
 pandas
 pytorch-lightning
