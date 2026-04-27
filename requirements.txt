@@ -1,0 +1,8 @@
+biopython
+numpy
+pandas
+pytorch-lightning
+scipy
+tensorboard
+torch
+tqdm

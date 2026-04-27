@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.DS_Store
+checkpoints/
+outputs/
+data/
