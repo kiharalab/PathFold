@@ -1,0 +1,10 @@
+name folding_after3x50_04112025
+numEpoches 10000
+batchSize 2
+maximumNumResidues 400
+logEverySteps 1000
+checkpointEveryEpoches 1
+learningRate 1e-4
+datasetNames base_20240110
+seed 25
+numPairTransformLayers 8

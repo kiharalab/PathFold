@@ -3,6 +3,4 @@ __pycache__/
 *.so
 .pytest_cache/
 .DS_Store
-checkpoints/
 outputs/
-data/
