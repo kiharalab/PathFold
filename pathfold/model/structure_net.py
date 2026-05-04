@@ -1,9 +1,9 @@
 import torch
 from torch import nn
 
-from alphapathfold.model.modules.invariant_point_attention import InvariantPointAttention
-from alphapathfold.model.modules.structure_transition import StructureTransition
-from alphapathfold.model.modules.backbone_update import BackboneUpdate
+from pathfold.model.modules.invariant_point_attention import InvariantPointAttention
+from pathfold.model.modules.structure_transition import StructureTransition
+from pathfold.model.modules.backbone_update import BackboneUpdate
 
 
 class StructureLayer(nn.Module):

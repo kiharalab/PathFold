@@ -19,8 +19,8 @@ import math
 import torch
 import torch.nn as nn
 
-from alphapathfold.model.modules.primitives import Linear, Attention
-from alphapathfold.utils.tensor_utils import (
+from pathfold.model.modules.primitives import Linear, Attention
+from pathfold.utils.tensor_utils import (
     chunk_layer, 
     permute_final_dims, 
     flatten_final_dims,

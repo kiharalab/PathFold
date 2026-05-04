@@ -20,7 +20,7 @@ from Bio.PDB import PDBParser
 import dataclasses
 import numpy as np
 
-import alphapathfold.util_af.residue_constants as residue_constants
+import pathfold.util_af.residue_constants as residue_constants
 #from .residue_constants import *
 FeatureDict = Mapping[str, np.ndarray]
 ModelOutput = Mapping[str, Any]  # Is a nested dict.

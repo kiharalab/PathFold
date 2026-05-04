@@ -19,7 +19,7 @@ COMMON_ARGS=(
 
 case "$MODE" in
   prev1)
-    exec "$PYTHON_BIN" -m alphapathfold.inference.run_inference \
+    exec "$PYTHON_BIN" -m pathfold.inference.run_inference \
       "${COMMON_ARGS[@]}" \
       --model_name folding_after50_08062024 \
       --model_version 0 \
@@ -29,7 +29,7 @@ case "$MODE" in
       data/example_4INW_A/initial_frames/4INW_A_frame_0482.pdb
     ;;
   prev3)
-    exec "$PYTHON_BIN" -m alphapathfold.inference.run_inference \
+    exec "$PYTHON_BIN" -m pathfold.inference.run_inference \
       "${COMMON_ARGS[@]}" \
       --model_name folding_after3x50_04112025 \
       --model_version 1 \
@@ -41,7 +41,7 @@ case "$MODE" in
       data/example_4INW_A/initial_frames/4INW_A_frame_0492.pdb
     ;;
   prev6)
-    exec "$PYTHON_BIN" -m alphapathfold.inference.run_inference \
+    exec "$PYTHON_BIN" -m pathfold.inference.run_inference \
       "${COMMON_ARGS[@]}" \
       --model_name folding_after6x50_04112025 \
       --model_version 2 \

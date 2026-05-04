@@ -1,6 +1,6 @@
 # Example Test Bundle: 4INW_A
 
-This bundle was copied from the local Genie data layout so the cleaned AlphaPathFold repo has one real inference test case.
+This bundle was copied from the local Genie data layout so the PathFold repo has one real inference test case.
 
 Included files:
 

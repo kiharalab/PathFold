@@ -1,14 +1,14 @@
 import torch
 from torch import nn
 
-from alphapathfold.model.single_feature_net import SingleFeatureNet
-from alphapathfold.model.pair_feature_net import PairFeatureNet
-from alphapathfold.model.pair_transform_net import PairTransformNet
-from alphapathfold.model.structure_net import StructureNet
+from pathfold.model.single_feature_net import SingleFeatureNet
+from pathfold.model.pair_feature_net import PairFeatureNet
+from pathfold.model.pair_transform_net import PairTransformNet
+from pathfold.model.structure_net import StructureNet
 
-from alphapathfold.utils.encoding import sinusoidal_encoding
+from pathfold.utils.encoding import sinusoidal_encoding
 
-from alphapathfold.model.conlstm import ConvLSTM
+from pathfold.model.conlstm import ConvLSTM
 #update
 class LabelEmbedder(nn.Module):
 	"""

@@ -16,7 +16,7 @@
 
 import torch.nn as nn
 
-from alphapathfold.model.modules.primitives import Linear
+from pathfold.model.modules.primitives import Linear
 
 
 class StructureTransitionLayer(nn.Module):

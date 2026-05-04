@@ -4,7 +4,7 @@ from torch.optim import Adam
 from abc import ABC, abstractmethod
 from pytorch_lightning.core import LightningModule
 
-from alphapathfold.model.model import Denoiser
+from pathfold.model.model import Denoiser
 
 
 class Diffusion(LightningModule, ABC):

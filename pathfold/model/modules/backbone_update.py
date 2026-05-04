@@ -17,8 +17,8 @@
 import torch
 from torch import nn
 
-from alphapathfold.model.modules.primitives import Linear
-from alphapathfold.utils.affine_utils import T, quat_to_rot 
+from pathfold.model.modules.primitives import Linear
+from pathfold.utils.affine_utils import T, quat_to_rot 
 
 
 class BackboneUpdate(nn.Module):

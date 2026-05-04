@@ -8,9 +8,9 @@ import torch
 from Bio.PDB.PDBExceptions import PDBConstructionWarning
 from tqdm import tqdm
 
-from alphapathfold.util_af import protein as protein_utils
-from alphapathfold.utils.data_io import load_coord
-from alphapathfold.utils.model_io import load_model
+from pathfold.util_af import protein as protein_utils
+from pathfold.utils.data_io import load_coord
+from pathfold.utils.model_io import load_model
 
 warnings.simplefilter("ignore", PDBConstructionWarning)
 
@@ -154,7 +154,7 @@ def main(args):
         )
 
     device = f"cuda:{args.gpu}" if args.gpu is not None else "cpu"
-    logger.info("Starting AlphaPathFold inference")
+    logger.info("Starting PathFold inference")
     logger.info(
         "Model=%s version=%s epoch=%s prev_frames=%s device=%s",
         args.model_name,
@@ -321,7 +321,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Run AlphaPathFold trajectory inference with precomputed AF2 embeddings."
+        description="Run PathFold trajectory inference with precomputed AF2 embeddings."
     )
     parser.add_argument("--model_root", default="checkpoints", help="Checkpoint root directory.")
     parser.add_argument("--model_name", required=True, help="Model directory name under model_root.")

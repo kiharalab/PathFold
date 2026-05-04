@@ -1,6 +1,6 @@
-# AlphaPathFold
+# PathFold
 
-AlphaPathFold is a diffusion-based protein folding pathway inference repository at C-alpha resolution. It predicts the next folding intermediate from:
+PathFold is a diffusion-based protein folding pathway inference repository at C-alpha resolution. It predicts the next folding intermediate from:
 
 - precomputed AlphaFold2 embeddings
 - one or more known previous intermediate structures
@@ -10,7 +10,7 @@ This repo is set up around inference. It includes working checkpoints for `prev1
 
 ## What This Repo Contains
 
-- `alphapathfold/`: model, diffusion, utilities, and inference code
+- `pathfold/`: model, diffusion, utilities, and inference code
 - `checkpoints/`: bundled model checkpoints used by this repo
 - `data/example_4INW_A/`: one real example with embeddings, folded reference, and initial frames
 - `scripts/run_example_4INW_A.sh`: helper script for testing the bundled example
@@ -21,17 +21,29 @@ This repo is set up around inference. It includes working checkpoints for `prev1
 From the repo root:
 
 ```bash
-cd AlphaPathFold
+git clone https://github.com/kiharalab/PathFold.git
+cd PathFold
 python -m pip install -e .
 ```
 
 That is enough to make:
 
 ```bash
-python -m alphapathfold.inference.run_inference
+python -m pathfold.inference.run_inference
 ```
 
 work from this repo.
+
+## CUDA / PyTorch Compatibility
+
+This repo has been tested with a PyTorch build targeting CUDA 13.
+
+If your machine has an older NVIDIA driver or a different CUDA stack, GPU inference may fail with a driver compatibility error. In that case, reinstall PyTorch with a build that matches the CUDA version supported by your system.
+
+See:
+
+- `https://pytorch.org/get-started/locally/`
+- `https://pytorch.org/get-started/previous-versions/`
 
 ## Checkpoints
 
@@ -86,17 +98,17 @@ It contains:
 Quick tests:
 
 ```bash
-cd AlphaPathFold
+cd PathFold
 bash scripts/run_example_4INW_A.sh prev1
 ```
 
 ```bash
-cd AlphaPathFold
+cd PathFold
 bash scripts/run_example_4INW_A.sh prev3
 ```
 
 ```bash
-cd AlphaPathFold
+cd PathFold
 bash scripts/run_example_4INW_A.sh prev6
 ```
 
@@ -111,9 +123,9 @@ bash scripts/run_example_4INW_A.sh prev3 1
 Example `prev1` run:
 
 ```bash
-cd AlphaPathFold
+cd PathFold
 
-python -m alphapathfold.inference.run_inference \
+python -m pathfold.inference.run_inference \
   --model_root checkpoints \
   --model_name folding_after50_08062024 \
   --model_version 0 \
@@ -128,9 +140,9 @@ python -m alphapathfold.inference.run_inference \
 Example `prev3` run:
 
 ```bash
-cd AlphaPathFold
+cd PathFold
 
-python -m alphapathfold.inference.run_inference \
+python -m pathfold.inference.run_inference \
   --model_root checkpoints \
   --model_name folding_after3x50_04112025 \
   --model_version 1 \
@@ -155,7 +167,7 @@ Current inference defaults:
 - progress bars: enabled
 - sampling progress bars: enabled
 
-Other defaults come from `alphapathfold/inference/run_inference.py`.
+Other defaults come from `pathfold/inference/run_inference.py`.
 
 ## Outputs
 

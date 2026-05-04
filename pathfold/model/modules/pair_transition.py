@@ -17,8 +17,8 @@
 import torch
 import torch.nn as nn
 
-from alphapathfold.model.modules.primitives import Linear
-from alphapathfold.utils.tensor_utils import chunk_layer
+from pathfold.model.modules.primitives import Linear
+from pathfold.utils.tensor_utils import chunk_layer
 
 
 class PairTransition(nn.Module):

@@ -18,9 +18,9 @@ import math
 import torch
 import torch.nn as nn
 
-from alphapathfold.model.modules.primitives import Linear, ipa_point_weights_init_
-from alphapathfold.utils.affine_utils import T
-from alphapathfold.utils.tensor_utils import (
+from pathfold.model.modules.primitives import Linear, ipa_point_weights_init_
+from pathfold.utils.affine_utils import T
+from pathfold.utils.tensor_utils import (
     permute_final_dims, 
     flatten_final_dims,
 )

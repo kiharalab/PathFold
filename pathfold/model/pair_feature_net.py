@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-from alphapathfold.model.template import get_template_fn
+from pathfold.model.template import get_template_fn
 
 
 class PairFeatureNet(nn.Module):

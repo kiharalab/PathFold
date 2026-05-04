@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-from alphapathfold.utils.encoding import sinusoidal_encoding
+from pathfold.utils.encoding import sinusoidal_encoding
 
 
 class SingleFeatureNet(nn.Module):

@@ -3,9 +3,9 @@ import sys
 import glob
 import numpy as np
 
-from alphapathfold.config import Config
-from alphapathfold.diffusion.alphapathfold import AlphaPathFoldDiffusion
-from alphapathfold.diffusion.alphapathfold_frame import AlphaPathFoldFrameDiffusion
+from pathfold.config import Config
+from pathfold.diffusion.pathfold import PathFoldDiffusion
+from pathfold.diffusion.pathfold_frame import PathFoldFrameDiffusion
 
 
 def get_versions(rootdir, name):
@@ -58,9 +58,9 @@ def load_model(rootdir, name, version=None, epoch=None, frame=False, prev_frame=
 	# load checkpoint
 	ckpt_filepath = os.path.join(basedir, 'version_{}'.format(version), 'checkpoints', 'epoch={}.ckpt'.format(epoch))
 	if frame:
-		diffusion = AlphaPathFoldFrameDiffusion.load_from_checkpoint(ckpt_filepath, config=config)
+		diffusion = PathFoldFrameDiffusion.load_from_checkpoint(ckpt_filepath, config=config)
 	else:
-		diffusion = AlphaPathFoldDiffusion.load_from_checkpoint(ckpt_filepath, config=config)
+		diffusion = PathFoldDiffusion.load_from_checkpoint(ckpt_filepath, config=config)
 	
 	# save checkpoint information
 	diffusion.rootdir = rootdir

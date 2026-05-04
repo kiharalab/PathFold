@@ -1,13 +1,13 @@
 import torch
 
-from alphapathfold.diffusion.diffusion_frame import Diffusion
-from alphapathfold.diffusion.schedule import get_betas
-from alphapathfold.utils.loss import rmsd
-from alphapathfold.utils.affine_utils import T
-from alphapathfold.utils.geo_utils import compute_frenet_frames
+from pathfold.diffusion.diffusion import Diffusion
+from pathfold.diffusion.schedule import get_betas
+from pathfold.utils.loss import rmsd
+from pathfold.utils.affine_utils import T
+from pathfold.utils.geo_utils import compute_frenet_frames
 
 
-class AlphaPathFoldFrameDiffusion(Diffusion):
+class PathFoldDiffusion(Diffusion):
 
 	def setup_schedule(self):
 
@@ -117,4 +117,4 @@ class AlphaPathFoldFrameDiffusion(Diffusion):
 
 
 # Backward-compatible alias kept for checkpoints and older scripts.
-Genie = AlphaPathFoldFrameDiffusion
+Genie = PathFoldDiffusion

@@ -1,6 +1,6 @@
 import torch
 
-from alphapathfold.utils.geo_utils import distance, dihedral
+from pathfold.utils.geo_utils import distance, dihedral
 
 
 def get_template_fn(template):

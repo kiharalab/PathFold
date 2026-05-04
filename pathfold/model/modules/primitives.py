@@ -22,7 +22,7 @@ import torch
 import torch.nn as nn
 from scipy.stats import truncnorm
 
-from alphapathfold.utils.tensor_utils import (
+from pathfold.utils.tensor_utils import (
     permute_final_dims, 
     flatten_final_dims,
 )

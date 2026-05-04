@@ -1,15 +1,15 @@
 from torch import nn
 
-from alphapathfold.model.modules.pair_transition import PairTransition
-from alphapathfold.model.modules.triangular_attention import (
+from pathfold.model.modules.pair_transition import PairTransition
+from pathfold.model.modules.triangular_attention import (
 	TriangleAttentionStartingNode,
 	TriangleAttentionEndingNode,
 )
-from alphapathfold.model.modules.triangular_multiplicative_update import (
+from pathfold.model.modules.triangular_multiplicative_update import (
 	TriangleMultiplicationOutgoing,
 	TriangleMultiplicationIncoming,
 )
-from alphapathfold.model.modules.dropout import (
+from pathfold.model.modules.dropout import (
 	DropoutRowwise,
 	DropoutColumnwise
 )

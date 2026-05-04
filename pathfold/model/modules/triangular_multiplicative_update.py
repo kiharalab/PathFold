@@ -18,8 +18,8 @@ from functools import partialmethod
 import torch
 import torch.nn as nn
 
-from alphapathfold.model.modules.primitives import Linear
-from alphapathfold.utils.tensor_utils import permute_final_dims
+from pathfold.model.modules.primitives import Linear
+from pathfold.utils.tensor_utils import permute_final_dims
 
 
 class TriangleMultiplicativeUpdate(nn.Module):
