@@ -67,7 +67,7 @@ Inference expects:
 - one folded reference PDB
 - previous known structure(s)
 
-The embedding file must contain:
+The embedding file must contain these embeddings:
 
 - `single`: typically shape `[L, 384]`
 - `pair`: typically shape `[L, L, 128]`
@@ -82,6 +82,60 @@ These are passed with:
 
 - `--prev_frames`
 - `--initial_structures`
+
+## Embedding Generation
+
+PathFold uses AlphaFold2 single and pair embeddings as conditioning features.
+Generate them by running the official AlphaFold2 repository:
+
+```bash
+git clone https://github.com/google-deepmind/alphafold.git
+cd alphafold
+```
+
+The official AlphaFold2 code does not save these embeddings by default. At
+line 94 in `alphafold/model/model.py`, add `return_representations=True` to the
+`return model(...)` call so embeddings are returned:
+
+```python
+return model(
+    batch,
+    is_training=False,
+    compute_loss=False,
+    ensemble_representations=True,
+    return_representations=True,
+)
+```
+
+After running AlphaFold2, the output pickle such as `result_model_1_pred_0.pkl`
+contains the needed embeddings at:
+
+- `result["representations"]["single"]`
+- `result["representations"]["pair"]`
+
+Convert them into the `.npz` format expected by PathFold:
+
+```bash
+python - <<'PY'
+import pickle
+import numpy as np
+
+result_pkl = "result_model_1_pred_0.pkl"
+output_npz = "target_af2_embedding.npz"
+
+with open(result_pkl, "rb") as handle:
+    result = pickle.load(handle)
+
+representations = result["representations"]
+np.savez_compressed(
+    output_npz,
+    single=representations["single"],
+    pair=representations["pair"],
+)
+PY
+```
+
+Pass the generated file to PathFold with `--af2_embedding`.
 
 ## Bundled Example
 
